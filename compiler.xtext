@@ -1,0 +1,36 @@
+grammar dk.sdu.mdsd.mathcompiler.Compiler with org.eclipse.xtext.common.Terminals
+
+generate compiler "http://www.sdu.dk/mdsd/mathcompiler/Compiler"
+
+File:
+	(((externals+=External)|(mathExpressions+=MathExp))';')*
+;
+
+External:
+	'external' label=STRING 'is' ext=ID'('(parameters+=INT',')* parameters+=INT')'
+;
+
+MathExp:
+	'result' label=STRING 'is' exp=Exp
+;
+
+Exp returns Expression:
+	Factor (('+' {Plus.left=current} | '-' {Minus.left=current}) right=Factor)*
+;
+
+Factor returns Expression:
+	Primary (('*' {Mult.left=current} | '/' {Div.left=current}) right=Primary)*	
+;
+
+Primary returns Expression:
+	Number | Parenthesis
+;
+
+Parenthesis returns Expression:
+	{Paren} '(' exp=Exp ')'
+;
+
+Number returns Expression:
+	{Num} value=INT
+;
+

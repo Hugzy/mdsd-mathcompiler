@@ -1,0 +1,17 @@
+result "Plus" is 2+3;
+
+result "Minus" is 56-1;
+
+result "Mult" is 5*5;
+
+result "Division" is 9/6;
+
+result "Everything" is 4+3*7/2-1;
+
+result "Negative" is 4+1;
+
+result "parenthesis" is (4+1)*3;
+
+external "calculate power of 2" is pow(4,2);
+
+external "add three numbers" is triple(5,5,5);

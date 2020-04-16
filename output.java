@@ -20,8 +20,8 @@ public class MathComputation {
 		System.out.println("Negative = " + (4 + 1));
 		System.out.println("parenthesis = " + ((4 + 1) * 3));
 	    // BEGIN: external functions only
-		System.out.println("calculate_power_of_2 = " + (externals.pow(4, 2)));
-		System.out.println("add_three_numbers = " + (externals.triple(5, 5, 5)));
+		System.out.println("calculate power of 2 = " + (externals.pow(4, 2)));
+		System.out.println("add three numbers = " + (externals.triple(5, 5, 5)));
 	    // END: external functions only
 		
 	}
